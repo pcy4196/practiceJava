@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class Q220205_001 {
 
     // 프로그래머스 LEVEL2 문자열 압축
-    // 참고 URL : https://programmers.co.kr/learn/courses/30/lessons/60057
+    // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/60057
 
     public int solution(String s) {
         int answer = s.length(); // 압축하기 전 문자열 길이로 초기화

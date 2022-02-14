@@ -2,5 +2,6 @@
 ***
 #### PROGRAMMERS
 ##### level2
-+ 문자열압축 - programmers.level2.Q220205_001
++ 문자열 압축 - programmers.level2.Q220205_001
++ 오픈 채팅방 - programmers.level2.Q220214_001
 ***
