@@ -13,9 +13,12 @@ public class Q220214_001 {
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/42888
 
     public String[] solution(String[] record) {
-        HashMap<String, String> userNick = new HashMap<>(); // user 닉네임
-        List<String> action = new ArrayList<>();            // action 을 담는 List
-        String[] tempRecrd  = null;                         // record 잠시 담아두는 변수(ex : "Enter uid1234 Muzi")
+        // user 닉네임
+        HashMap<String, String> userNick = new HashMap<>();
+        // action 을 담는 List
+        List<String> action = new ArrayList<>();
+        // record 잠시 담아두는 변수(ex : "Enter uid1234 Muzi")
+        String[] tempRecrd  = null;
 
         // record 문자열이 담긴 배열
         for (String s : record) {
@@ -26,7 +29,8 @@ public class Q220214_001 {
                 // Enter action 일때
                 action.add(tempRecrd[1]+"님이 들어왔습니다.");
                 if (tempRecrd.length > 2) {
-                    userNick.put(tempRecrd[1], tempRecrd[2]);       // id별 닉네임 설정(마지막으로 설정한 별명 저장하는 map)
+                    // id별 닉네임 설정(마지막으로 설정한 별명 저장하는 map)
+                    userNick.put(tempRecrd[1], tempRecrd[2]);
                 }
             } else if ("Leave".equals(tempRecrd[0])) {
                 // Leave action 일때
@@ -34,7 +38,8 @@ public class Q220214_001 {
             } else {
                 // Change action 일때
                 if (tempRecrd.length > 2) {
-                    userNick.put(tempRecrd[1], tempRecrd[2]);       // id별 닉네임 설정(마지막으로 설정한 별명 저장하는 map)
+                    // id별 닉네임 설정(마지막으로 설정한 별명 저장하는 map)
+                    userNick.put(tempRecrd[1], tempRecrd[2]);
                 }
             }
         }
@@ -42,9 +47,12 @@ public class Q220214_001 {
         String tempId = "";
         String tempStr = "";
         for (int i = 0; i < action.size(); i++) {
-            tempStr = action.get(i);                                    // action 리스트의 한줄을 가져온다.
-            tempId = tempStr.substring(0, tempStr.indexOf("님"));       // id 값 추출(ex : uid1234)
-            answer[i] = tempStr.replace(tempId, userNick.getOrDefault(tempId, "그림자")); // id값을 닉네임으로 변경
+            // action 리스트의 한줄을 가져온다.
+            tempStr = action.get(i);
+            // id 값 추출(ex : uid1234)
+            tempId = tempStr.substring(0, tempStr.indexOf("님"));
+            // id값을 닉네임으로 변경
+            answer[i] = tempStr.replace(tempId, userNick.getOrDefault(tempId, "그림자"));
         }
         return answer;
     }
