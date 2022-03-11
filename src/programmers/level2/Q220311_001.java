@@ -3,20 +3,20 @@ package programmers.level2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Q220309_001 {
+public class Q220311_001 {
 
-    // 프로그래머스 LEVEL2 멀쩡한 사각형
+    // 프로그래머스 LEVEL2 멀쩡한 사각형 - 2
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/62048
 
     /*
     가로 : 2, 세로 : 3
     최대공약수 : 1
-    사용못하는 사각형 : 2 + 3 - 1 = 4
+    사용못하는 사각형 : ((2/1) + (3/1) - 1)  * 1 = 4
     사용가능 사각형 : 2
 
     가로 : 8, 세로 : 12
     최대공약수 : 4
-    사용못하는 사각형 : 8 + 12 - 4 = 16
+    사용못하는 사각형 : ((8/4) + (12/4) - 1) * 4 = 16
     사용가능 사각형 : 96 - 16 = 60
     */
     public long solution(int w, int h) {
@@ -26,17 +26,19 @@ public class Q220309_001 {
         Long lGcp = Long.valueOf(gcp);
         Long lw = Long.valueOf(w);
         Long lh = Long.valueOf(h);
-        answer = (lw * lh) - (lw + lh - lGcp - 1);
+        answer = (lw * lh) - (((lw/lGcp) + (lh/lGcp) - 1) * lGcp);
         return answer;
     }
 
-    // 유클리드 호제법(최대공약수 추출) --> 재귀함수 사용
+    // 유클리드 호제법(최대공약수 추출) --> while 문 사용
     private int gcp(int a, int b) {
-        if (a % b == 0) {
-            return b;
-        } else {
-            return gcp(b, a % b);
+        int temp;
+        while (a % b != 0) {
+            temp = a % b;
+            a = b;
+            b = temp;
         }
+        return b;
     }
 
     @Test
