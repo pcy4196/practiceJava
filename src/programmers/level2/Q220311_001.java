@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class Q220311_001 {
 
-    // 프로그래머스 LEVEL2 멀쩡한 사각형 - 2
+    // 프로그래머스 LEVEL2 멀쩡한 사각형(2)
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/62048
 
     /*
