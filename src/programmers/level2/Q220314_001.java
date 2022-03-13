@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q220313_002 {
+public class Q220314_001 {
 
     // 프로그래머스 LEVEL2 기능개발
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/42586
