@@ -8,28 +8,24 @@ public class Q220321_001 {
     // 프로그래머스 LEVEL2 타겟 넘버
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/43165
 
-    int[] arr;
     int answer = 0;
 
     public int solution(int[] numbers, int target) {
-        arr = numbers;
-
-        dfs(0, 0, target);
-
+        dfs(numbers, target, 0, 0);
         return answer;
     }
 
-    public void dfs(int sum, int i, int target) {
-        if(i == arr.length) {
-            if(sum == target) answer++;
-            return;
+    private void dfs(int[] numbers, int target, int depth, int sum) {
+        if (depth == numbers.length) {
+            if (target == sum) {
+                this.answer++;
+            }
+        } else {
+            dfs(numbers, target, depth+1, sum + numbers[depth]);
+            dfs(numbers, target, depth+1, sum - numbers[depth]);
         }
-
-        dfs(sum+arr[i], i+1, target);
-        dfs(sum-arr[i], i+1, target);
     }
 
-    // [1, 1, 1, 1, 1] 3 5
     @Test
     public void testSolution() {
         int[] num = {1, 1, 1, 1, 1};
