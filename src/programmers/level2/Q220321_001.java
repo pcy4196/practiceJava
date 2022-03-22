@@ -21,8 +21,10 @@ public class Q220321_001 {
                 this.answer++;
             }
         } else {
-            dfs(numbers, target, depth+1, sum + numbers[depth]);
-            dfs(numbers, target, depth+1, sum - numbers[depth]);
+            for (int i = 0; i < 2; i++) {
+                int newSum = i == 0 ? sum + numbers[depth] : sum - numbers[depth];
+                dfs(numbers, target, depth+1, newSum);
+            }
         }
     }
 
