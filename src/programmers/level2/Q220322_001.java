@@ -21,7 +21,7 @@ public class Q220322_001 {
         stkv.push(-numbers[0]);
 
         for (int i = 1; i < numbers.length; i++) {
-            // i 단계 깊이의 수자합 구현
+            // i 단계 깊이의 숫자합 구현
             list = new ArrayList<>();
             while (!stkv.isEmpty()) {
                 int tempNum = stkv.pop();
@@ -38,7 +38,7 @@ public class Q220322_001 {
                 stkv.push(list.get(j));
             }
         }
-        // number 숫자가 5이므로 size 32
+        // number 개수가 5이므로 size 32
         System.out.println("stack size : " + stkv.size());
         for (Integer stkVal : stkv) {
             if (stkVal == target) answer++;
