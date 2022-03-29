@@ -3,8 +3,6 @@ package programmers.level2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.PriorityQueue;
-
 public class Q220329_001 {
 
     // 프로그래머스 LEVEL2 행렬 테두리 회전하기
@@ -14,56 +12,70 @@ public class Q220329_001 {
         // 답 배열 선언
         int[] answer = new int[queries.length];
         // 행렬에 넣을 숫자 선언
-        int num = 1;
+        int num = 0;
         // 행렬 선언
         int[][] matrix = new int[rows+1][columns+1];
         // 행렬에 숫자 초기화
         for (int i = 1; i <= rows; i++) {
             for (int j = 1; j <= columns; j++) {
-                matrix[i][j] = num;
-                num++;
+                matrix[i][j] = ++num;
             }
         }
-        for (int i = 0; i < queries.length; i++) {
-            int[] action = queries[i];  // 2,2,5,4 --> 1
-            int x1 = action[0];
-            int y1 = action[1];
-            int x2 = action[2];
-            int y2 = action[3];
-            // 가로로 움직이는 길이
-            int w = y2 - y1 + 1;
-            // 세로로 움직이는 길이
-            int h = x2 - x1 - 1;
-            int tempMinNum = num;
-            // 가로(행) 숫자 변형 구현
-            for (int j = 0; j < w; j++) {
-                if (j == 0) {
-                    matrix[x1][y1] = matrix[x1][y1] + rows;
-                    matrix[x2][y2] = matrix[x2][y2] - rows;
-                    int minNum = Math.min(matrix[x1][y1], matrix[x2][y2]);
-                    tempMinNum = Math.min(minNum, tempMinNum);
-                } else {
-                    matrix[x1][y1+j] = matrix[x1][y1+j] - 1;
-                    matrix[x2][y2-j] = matrix[x2][y2-j] + 1;
-                    int minNum = Math.min(matrix[x1][y1+j], matrix[x2][y2-j]);
-                    tempMinNum = Math.min(minNum, tempMinNum);
-                }
-            }
-            // 1보다 클경우에만 수행
-            // 세로(열) 숫자 변형
-            if (h > 0) {
-                for (int j = 1; j <= h; j++) {
-                    matrix[x1+j][y1] = matrix[x1+j][y1] + rows;
-                    matrix[x2-j][y2] = matrix[x2-j][y2] - rows;
-                    int minNum = Math.min(matrix[x1+j][y1], matrix[x2-j][y2]);
-                    tempMinNum = Math.min(minNum, tempMinNum);
-                }
-            }
 
-            answer[i] = tempMinNum;
+        for (int i = 0; i < queries.length; i++) {
+            answer[i] = rotate(queries[i], matrix);
         }
 
         return answer;
+    }
+
+    // 테두리 회전 변수
+    private int rotate(int[] query, int[][] matrix) {
+        // 이동변수 초기화
+        int x1 = query[0];
+        int y1 = query[1];
+        int x2 = query[2];
+        int y2 = query[3];
+        int temp = matrix[x1][y1];    // matrix[2][2] - 임시 저장(마지막 남는 숫자)
+        int min = temp;
+        // 왼쪽면
+        for (int i = x1; i < x2; i++) {
+            // 2,2 = 3,2
+            // 3,2 = 4,2
+            // 4,2 = 5,2
+            matrix[i][y1] = matrix[i+1][y1];
+            // 새로 할당된 숫자 최소값과 비교
+            if (min > matrix[i][y1])
+                min = matrix[i][y1];
+        }
+        // 밑면
+        for (int i = y1; i < y2; i++) {
+            // 5,2 = 5,3
+            // 5,3 = 5,4
+            matrix[x2][i] = matrix[x2][i+1];
+            if (min > matrix[x2][i])
+                min = matrix[x2][i];
+        }
+        // 오른쪽면
+        for (int i = x2; i > x1; i--) {
+            // 5,4 = 4,4
+            // 4,4 = 3,4
+            // 3,4 = 2,4
+            matrix[i][y2] = matrix[i-1][y2];
+            if (min > matrix[i][y2])
+                min = matrix[i][y2];
+        }
+        // 윗면
+        for (int i = y2; i > y1+1; i--) {
+            // 2,4 = 2,3
+            // 2,3 = 2,2 --> 해당 데이터는 temp로 처리
+            matrix[x1][i] = matrix[x1][i-1];
+            if (min > matrix[x1][i])
+                min = matrix[x1][i];
+        }
+        matrix[x1][y1+1] = temp;
+
+        return min;
     }
 
     @Test
