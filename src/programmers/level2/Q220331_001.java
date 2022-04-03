@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Q220331_001 {
 
     // 프로그래머스 LEVEL2 소수 찾기
-    // 문제 URL : https://programmers.co.k∑r/learn/courses/30/lessons/42839
+    // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/42839
 
     // '11과 011은 같은 숫자로 취급합니다.'
     // --> 중복을 제거하면서 숫자를 저장하는 set 선언
@@ -34,7 +34,8 @@ public class Q220331_001 {
         if (num == 0 || num == 1) {
             return 0;
         }
-        int endNum = Math.floorDiv(num, 2);    // 해당 숫자 나누기 2한 몫까지 처리
+        Math.sqrt(num);
+        int endNum = (int) Math.sqrt(num);    // 해당 숫자 루트값 구한 뒤 진행
         for (int i = 2; i <= endNum; i++) {
             // 해당 숫자가 i 숫자의 배수중 하나이면 소수 X
             if ((num % i) == 0) {
