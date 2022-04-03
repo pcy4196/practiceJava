@@ -19,7 +19,7 @@ public class Q220331_001 {
         int answer = 0;
         set = new HashSet<>();
         // numbers에 선언된 숫자로 모든 숫자 탐색
-        numBfs("", numbers);
+        permutation("", numbers);
         Iterator<Integer> iterator = set.iterator();
         while (iterator.hasNext()) {
             answer += chkPrimeNum(iterator.next());
@@ -45,16 +45,16 @@ public class Q220331_001 {
         return 1;
     }
 
-    // 숫자 탐색하는 함수
+    // 숫자 탐색하는 함수(백트래킹)
     // 1, 17, 7 ,71
-    private void numBfs(String prefix, String numbers) {
+    private void permutation(String prefix, String numbers) {
         int n = numbers.length();
         if (!"".equals(prefix)) {
             // 빈값이 아니면 모든 숫자를 set에 포함
             set.add(Integer.parseInt(prefix));
         }
         for (int i = 0; i < n; i++) {
-            numBfs(prefix + numbers.charAt(i),
+            permutation(prefix + numbers.charAt(i),
                     numbers.substring(0, i) + numbers.substring(i+1, n));
         }
     }
