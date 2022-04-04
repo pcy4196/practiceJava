@@ -34,7 +34,6 @@ public class Q220331_001 {
         if (num == 0 || num == 1) {
             return 0;
         }
-        Math.sqrt(num);
         int endNum = (int) Math.sqrt(num);    // 해당 숫자 루트값 구한 뒤 진행
         for (int i = 2; i <= endNum; i++) {
             // 해당 숫자가 i 숫자의 배수중 하나이면 소수 X
