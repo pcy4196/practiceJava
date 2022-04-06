@@ -66,6 +66,8 @@ public class Q220406_001 {
             temp += numbers.charAt(i);
             recursive(numbers, temp, len);
             check[i] = false;
+            // 1 -> 7을 담기위해서 호출하기 전으로 temp 값 변경
+            temp = temp.substring(0, temp.length() - 1);
         }
     }
 
