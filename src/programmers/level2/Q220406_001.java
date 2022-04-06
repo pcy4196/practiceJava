@@ -11,8 +11,7 @@ public class Q220406_001 {
     // 프로그래머스 LEVEL2 소수 찾기 -- 2
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/42839
 
-    // '11과 011은 같은 숫자로 취급합니다.'
-    // --> 중복을 제거하면서 숫자를 저장하는 set 선언
+    // 백트래킹을 진행한 숫자 모음들을 담는 List변수 선언
     List<Integer> arr = null;
     // numbers의 몇 번째 인덱스에 방문했는지 여부를 체크하는 배열.
     boolean[] check = null;
