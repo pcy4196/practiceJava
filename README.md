@@ -17,5 +17,6 @@
 + 더 맵게 - programmers.level2.Q220326_001
 + 행렬 테두리 회전하기 - programmers.level2.Q220329_001
 + 소수 찾기 - programmers.level2.Q220331_001
-+ 카펫 - programmers.level2.펫
++ 카펫 - programmers.level2.Q220410_001
++ 프린터 - programmers.level2.Q220413_001
 ***
