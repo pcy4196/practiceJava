@@ -96,7 +96,5 @@ public class Q220420_001 {
     public void testSolution() {
         int[][] road = {{1,2,1},{2,3,3},{5,2,2},{1,4,2},{5,3,1},{5,4,2}};
         Assertions.assertEquals(4, this.solution(5, road, 3));
-//        int[] priorities = {1, 1, 9, 1, 1, 1};
-//        Assertions.assertEquals(5, this.solution(priorities, 0));
     }
 }
