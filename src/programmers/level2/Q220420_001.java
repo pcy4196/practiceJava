@@ -1,5 +1,6 @@
 package programmers.level2;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -35,6 +36,12 @@ public class Q220420_001 {
 
         dist = dijkstra(nodeInfo, dist, 1, N);
 
+        for (int i = 0; i < dist.length; i++) {
+            if (dist[i] <= K) {
+                answer++;
+            }
+        }
+
         return answer;
     }
 
@@ -44,6 +51,7 @@ public class Q220420_001 {
         pq.offer(new Node(1, 0));
         
         while (!pq.isEmpty()) {
+            // 우선순위 큐에서 최고 앞에 있는 값 추출
             Node node = pq.poll();
 
             // dist 변수가 작으면 nodeInfo 탐색 X
@@ -52,7 +60,14 @@ public class Q220420_001 {
             }
 
             for (Node next : nodeInfo.get(node.edge)) {
-                
+                // dist 변수에 저장된 기준이되는 마을까지의 거리보다
+                // next + node 와의 거리를 비교하여 작다면
+                // dist 변수 변경 및 우선순위큐 새로운 값 추가
+                if(dist[next.edge] > node.distance + next.distance) {
+                    dist[next.edge] = node.distance + next.distance;
+                    // next.edge 마을까지 거리 새롭게 정의
+                    pq.offer(new Node(next.edge, node.distance + next.distance));
+                }
             }
             
         }
@@ -79,8 +94,8 @@ public class Q220420_001 {
 
     @Test
     public void testSolution() {
-//        int[] priorities = {2, 1, 3, 2};
-//        Assertions.assertEquals(1, this.solution(priorities, 2));
+        int[][] road = {{1,2,1},{2,3,3},{5,2,2},{1,4,2},{5,3,1},{5,4,2}};
+        Assertions.assertEquals(4, this.solution(5, road, 3));
 //        int[] priorities = {1, 1, 9, 1, 1, 1};
 //        Assertions.assertEquals(5, this.solution(priorities, 0));
     }
