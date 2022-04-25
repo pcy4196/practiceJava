@@ -22,4 +22,5 @@
 + 프린터(코드경량 및 개선) - programmers.level2.Q220414_001
 + 배달 - programmers.level2.Q220420_001
 + 다리를 지나는 트럭 - programmers.level2.Q220422_001
++ N개의 최소공배수 - programmers.level2.Q220425_001
 ***
