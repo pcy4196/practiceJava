@@ -9,6 +9,7 @@ public class Q220426_001 {
     // 문제 URL : https://programmers.co.kr/learn/courses/30/lessons/12953
 
     public int solution(int[] arr) {
+        // 가장 작은 값인 1로 초기화
         int answer = 1;
         for (int i = 0; i < arr.length; i++) {
             answer = (answer * arr[i]) / this.gcd(answer, arr[i]);
