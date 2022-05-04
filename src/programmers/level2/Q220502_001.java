@@ -34,6 +34,23 @@ public class Q220502_001 {
         return sb.toString();
     }
 
+    // 다른 풀이방법으로 풀이
+    public String solutionOne(String s) {
+        StringBuffer sb = new StringBuffer();
+        // 소문자로 변환
+        String lowerStr = s.toLowerCase();
+        // 공백 판단 변수
+        boolean flagGap = false;
+
+        for (int i = 0; i < lowerStr.length(); i++) {
+            // 문자가 첫번째이거나 이전문자가 공백일경우
+            sb.append(i == 0 || flagGap ? Character.toUpperCase(lowerStr.charAt(i)) : lowerStr.charAt(i));
+            flagGap = Character.isSpaceChar(lowerStr.charAt(i)) ? true : false;
+        }
+
+        return sb.toString();
+    }
+
 
     @Test
     public void testSolution() {
@@ -41,7 +58,7 @@ public class Q220502_001 {
         String strA = "3people Unfollowed Me";
         String strQ1 = "for the last week";
         String strA1 = "For The Last Week";
-        Assertions.assertEquals(strA, this.solution(strQ));
+        Assertions.assertEquals(strA, this.solutionOne(strQ));
         Assertions.assertEquals(strA1, this.solution(strQ1));
     }
 }
