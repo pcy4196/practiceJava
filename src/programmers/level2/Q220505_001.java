@@ -3,10 +3,6 @@ package programmers.level2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-
 public class Q220505_001 {
 
     // 프로그래머스 LEVEL2 큰 수 만들기

@@ -28,3 +28,8 @@
 + JadenCase 문자열 만들기 - programmers.level2.Q220502_001
 + 큰 수 만들기 - programmers.level2.Q220505_001
 ***
+
+#### 백준(BOJ)
+##### untilGold 티어(~골드 티어까지)
++ 부분수열의 합(SILVER2) - boj.untilGold.Q1182_001
+***
