@@ -32,4 +32,5 @@
 #### 백준(BOJ)
 ##### untilGold 티어(~골드 티어까지)
 + 부분수열의 합(SILVER2) - boj.untilGold.Q1182_001
++ 덩치(SILVER5)  - boj.untilGold.Q7568_001
 ***
