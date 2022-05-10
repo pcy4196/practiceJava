@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Q7568_001 {
@@ -15,50 +14,41 @@ public class Q7568_001 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        ArrayList<Pinfo> plist = new ArrayList<>();
+        int N = Integer.parseInt(st.nextToken());   // 비교할 사람의 수
+        ArrayList<Pinfo> pList = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            int weight = Integer.parseInt(st.nextToken());
-            int height = Integer.parseInt(st.nextToken());
-            plist.add(new Pinfo(i, weight, height));
+            int weight = Integer.parseInt(st.nextToken());  // 몸무게
+            int height = Integer.parseInt(st.nextToken());  // 키
+            pList.add(new Pinfo(weight, height));
         }
 
-        Collections.sort(plist);
+        for (int i = 0; i < N; i++) {
+            int rank = 1;
+            Pinfo pinfo = pList.get(i);
 
-        for (Pinfo pinfo : plist) {
-            System.out.println(pinfo);
+            for (int j = 0; j < N; j++) {
+                if (i == j) continue;
+                Pinfo pinfo2 = pList.get(j);
+                // 기준이 되는 사람이 비교되는 사람보다 덩치(키,몸무게)가 작다면
+                if (pinfo.height < pinfo2.height
+                 && pinfo.weight < pinfo2.weight) {
+                    rank++;
+                }
+            }
+
+            System.out.print(rank + " ");
         }
-
     }
-    
-    // 사람정보를 가지고 있는 class 변수
-    static class Pinfo implements Comparable<Pinfo>{
-        int name;
+
+    // 사람의 정보를 저장하는 class 변수
+    static class Pinfo {
         int weight;
         int height;
-        int rank;
 
-        public Pinfo(int name, int weight, int height) {
-            this.name = name;
+        public Pinfo(int weight, int height) {
             this.weight = weight;
             this.height = height;
         }
-
-        @Override
-        public String toString() {
-            return "Pinfo{" +
-                    "name=" + name +
-                    ", height=" + height +
-                    ", weight=" + weight +
-                    ", rank=" + rank +
-                    '}';
-        }
-
-        @Override
-        public int compareTo(Pinfo pinfo) {
-            return pinfo.weight - this.height;
-        }
     }
-
 }
