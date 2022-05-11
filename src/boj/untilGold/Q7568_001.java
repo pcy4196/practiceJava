@@ -28,7 +28,7 @@ public class Q7568_001 {
             Pinfo pinfo = pList.get(i);
 
             for (int j = 0; j < N; j++) {
-                if (i == j) continue;
+                if (i == j) continue; // 자기자신과는 비교를 할필요 없으므로 skip 처리
                 Pinfo pinfo2 = pList.get(j);
                 // 기준이 되는 사람이 비교되는 사람보다 덩치(키,몸무게)가 작다면
                 if (pinfo.height < pinfo2.height
