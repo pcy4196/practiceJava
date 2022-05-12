@@ -26,7 +26,8 @@ public class Q1182_001 {
 
         dfs(0,0, N, S);
 
-        if (S == 0) answer--;   // 부분수열중에 공집합(아무것도 선택 X)도 가능하기 때문에 -1 필요
+        if (S == 0) answer--;   
+        // 부분수열중에 공집합(아무것도 선택 X)도 가능하기 때문에 -1 필요(답이 0일 경우만)
         System.out.println(answer);
     }
 
