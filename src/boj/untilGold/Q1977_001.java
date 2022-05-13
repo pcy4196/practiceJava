@@ -18,9 +18,26 @@ public class Q1977_001 {
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
-        System.out.println("M : " + M);
-        System.out.println("N : " + N);
+        // 완전제곱수가 합을 담는 변수
+        int sum = 0;
+        // 자연수 최대값 10000 이므로 초기값 10001 으로 초기화
+        int minNum = 10001;
 
+        for (int i = M; i <= N; i++) {
+            // 해당 숫자 완전제곱수인지 판단
+            if (Math.sqrt(i) % 1 == 0) {
+                sum += i;
+                if (minNum > i) {
+                    minNum = i;
+                }
+            }
+        }
+
+        // 정답 출력
+        System.out.println(sum == 0 ? -1 : sum);
+        if (minNum != 10001) {
+            System.out.println(minNum);
+        }
     }
 
 }
