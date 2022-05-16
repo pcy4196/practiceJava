@@ -36,4 +36,5 @@
 + 덩치(SILVER5) - boj.untilGold.Q7568_001
 + 완전제곱수(BRONZE1) - boj.untilGold.Q1977_001
 + 괄호(SILVER4) - boj.untilGold.Q9012_001
++ 가장 긴 증가하는 부분 수열(SILVER2) - boj.untilGold.Q11053_001
 ***
