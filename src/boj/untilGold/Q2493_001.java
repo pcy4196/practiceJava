@@ -3,7 +3,7 @@ package boj.untilGold;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Q2493_001 {
@@ -14,38 +14,38 @@ public class Q2493_001 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        // 텁의수
+        // 탑의수
         int N = Integer.parseInt(st.nextToken());
-        // 탑의 정보 담는 배열변수
-        int[] arr = new int[N];
+        // 탑의정보를 저장하는 stack 변수
+        Stack<Top> stack = new Stack<>();
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
 
-        // 레이저 신호를 수신 정보를 담는 변수
-        int[] topArr = new int[N];
-        // 기본값을 0으로 설정
-        Arrays.fill(topArr, 0);
-
-        // 레이저 수신정보를 잠깐 담는 변수
-        int tempRzer = Integer.MAX_VALUE;
-        // 우측부터 레이저 신호를 탐색하기 위해서 아래와 같이 for문 작성
-        for (int i = N - 1; i > 0; i--) {
-            // 탐색하는 탑의 순서가 tempRzer 보다 작을때 비교로직 수행
-            if (i < tempRzer) {
-                for (int j = i - 1; j >= 0; j--) {
-                    if (arr[j] > arr[i]) {
-                        tempRzer = j + 1;
-                        topArr[i] = tempRzer;
-                        break;
-                    }
+        // 시간초과가 발생하지 않기 위해서 값을 받으면서 처리
+        for (int i = 1; i <= N; i++) {
+            int topHeight = Integer.parseInt(st.nextToken());
+            while (!stack.isEmpty()) {
+                if (stack.peek().height >= topHeight) {
+                    System.out.print(stack.peek().location + " ");
+                    break;
                 }
-            } else {
-                topArr[i] = tempRzer;
+                stack.pop();
             }
+            // stack에 값이 없다면 0 출력
+            if (stack.isEmpty()) {
+                System.out.print(0 + " ");
+            }
+            // 출력이 끝나고 나면 현재 탑정보 stack에 추가
+            stack.push(new Top(i, topHeight));
         }
+    }
 
-        Arrays.stream(topArr).forEach(s -> System.out.print(s + " "));
+    static class Top {
+        int location;
+        int height;
+
+        public Top(int location, int height) {
+            this.location = location;
+            this.height = height;
+        }
     }
 }
