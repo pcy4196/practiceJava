@@ -38,5 +38,6 @@
 + 괄호(SILVER4) - boj.untilGold.Q9012_001
 + 가장 긴 증가하는 부분 수열(SILVER2) - boj.untilGold.Q11053_001
 + 가장 긴 감소하는 부분 수열(SILVER2) - boj.untilGold.Q11722_001
-+ 탑(GOLD5) - boj.untilGold.Q2493_001 
++ 탑(GOLD5) - boj.untilGold.Q2493_001
++ 탑(GOLD5) - boj.untilGold.Q2493_001
 ***

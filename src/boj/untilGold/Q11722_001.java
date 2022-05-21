@@ -33,7 +33,7 @@ public class Q11722_001 {
         int answer = 0;
         dy[0] = 1;
         if (arr.length == 1) {
-            // 수열의 길이 1일 경우(해당 탑의 레이저 닿는 곳 존재하지 않아 값'0' 리턴)
+            // 수열의 길이 1일 경우
             answer = dy[0];
         } else {
             for (int i = 1; i < arr.length; i++) {
