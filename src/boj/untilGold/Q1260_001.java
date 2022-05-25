@@ -3,9 +3,7 @@ package boj.untilGold;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Q1260_001 {
 
@@ -14,7 +12,7 @@ public class Q1260_001 {
 
     static int[][] graph;
     static int[] visited;
-    static Stack<Integer> stack;
+    static Queue<Integer> queue;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -40,11 +38,11 @@ public class Q1260_001 {
         System.out.println(); //줄바꿈
 
         // BFS 알고리즘 수행
-        stack = new Stack<>();
-        stack.add(V);
+        queue = new LinkedList<>();
+        queue.add(V);
         Arrays.fill(visited, 0);
         visited[V] = 1;
-        System.out.print(1 + " ");
+        System.out.print(V + " ");
         bfs(N);
     }
 
@@ -64,13 +62,13 @@ public class Q1260_001 {
         }
     }
 
-
+    // bfs 알고리즘 수행(Queue 사용)
     private static void bfs(int N) {
-        while (!stack.isEmpty()) {
-            int node = stack.pop();
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
             for (int i = 1; i <= N; i++) {
                 if (graph[node][i] == 1 && visited[i] != 1) {
-                    stack.add(i);
+                    queue.add(i);
                     visited[i] = 1;
                     System.out.print(i + " ");
                 }
