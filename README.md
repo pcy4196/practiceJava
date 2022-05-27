@@ -41,5 +41,5 @@
 + 탑(GOLD5) - boj.untilGold.Q2493_001 (스택[stack] 사용)
 + 탑(GOLD5) - boj.untilGold.Q2493_002 (속도 개선)
 + DFS와 BFS(SILVER2) - boj.untilGold.Q1260_001
-
++ 잃어버린 괄호(SILVER2) - boj.untilGold.Q1541_001
 ***
