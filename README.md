@@ -44,5 +44,5 @@
 + 잃어버린 괄호(SILVER2) - boj.untilGold.Q1541_001
 + N과 M(1)(SILVER3) - boj.untilGold.Q15649_001
 + N과 M(1)(SILVER3) - boj.untilGold.Q15649_002 - 출력 arr 배열
-+ N과 M(2)(SILVER3) - boj.untilGold.Q15650_001
++ N과 M(2)(SILVER3) - boj.untilGold.Q15650_001 - 증가 수열 추출
 ***
