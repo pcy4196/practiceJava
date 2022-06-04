@@ -22,7 +22,24 @@ public class Q2750_001 {
         }
 
         // 오름차순 정렬
-        Arrays.sort(arr);
+        // 0. 기본 정렬
+//        Arrays.sort(arr);
+        // 1. 버블정렬 적용
+        for (int i = 0; i < N - 1; i++) {
+            boolean flag = true;   // 속도개선을 위해 추가하는 변수
+            for (int j = 0; j < N - 1 - i; j++) {
+                if (arr[j] > arr[j+1]) {
+                    flag = false;
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            // flag 값이 true 이면 이미 정렬된 상태라 for문 종료
+            if (flag) {
+                break;
+            }
+        }
         // 예제출력
         for (int i : arr) {
             System.out.println(i);
