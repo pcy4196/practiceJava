@@ -47,4 +47,5 @@
 + N과 M(2)(SILVER3) - boj.untilGold.Q15650_001 - 증가 수열 추출
 + 수 정렬하기(BRONZE1) - boj.untilGold.Q2750_001
 + 괄호의 값(SILVER1) - boj.untilGold.Q2504_001
++ 회의실 배정(SILVER1) - boj.untilGold.Q1931_001
 ***
