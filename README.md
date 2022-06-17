@@ -49,4 +49,5 @@
 + 괄호의 값(SILVER1) - boj.untilGold.Q2504_001
 + 회의실 배정(SILVER1) - boj.untilGold.Q1931_001
 + 바이러스(SILVER3) - boj.untilGold.Q2606_001
++ 1로 만들기(SILVER3) - boj.untilGold.Q1463_001
 ***
