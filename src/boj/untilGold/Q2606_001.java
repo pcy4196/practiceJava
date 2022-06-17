@@ -43,9 +43,9 @@ public class Q2606_001 {
             }
         }
 
-        int answer = 0;             // 감염 컴퓨터 수(1에서)
-        for (int i = 2; i <= N; i++) {
-            if (visited[i] == 1) {
+        int answer = 0;                 // 감염 컴퓨터 수(1에서부터 시작)
+        for (int i = 2; i <= N; i++) {  
+            if (visited[i] == 1) {      // visited 배열에 값이 '1'이면 1에서 연결된 노드(컴퓨터)를 나타냄 
                 answer++;
             }
         }
