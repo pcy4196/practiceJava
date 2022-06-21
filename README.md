@@ -52,4 +52,5 @@
 + 1로 만들기(SILVER3) - boj.untilGold.Q1463_001
 + 계단 오르기(SILVER3) - boj.untilGold.Q2579_001
 + 태권왕(SILVER2) - boj.untilGold.Q14562_001
++ 태권왕(SILVER2) - boj.untilGold.Q14562_002
 ***
