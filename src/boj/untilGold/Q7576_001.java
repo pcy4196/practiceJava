@@ -11,16 +11,17 @@ public class Q7576_001 {
 
     // 백준(BOJ) GOLD5 토마토
     // 문제 URL : https://www.acmicpc.net/problem/7576
-    static int[] x = {1, 0, -1, 0};    // 가로로 움
-    static int[] y = {0, 1, 0, -1};
+
+    static int[] x = {1, 0, -1, 0};    // 가로 움직임
+    static int[] y = {0, 1, 0, -1};    // 세로 움직임
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int M = Integer.parseInt(st.nextToken());           // M 가로 칸의 수(열)
-        int N = Integer.parseInt(st.nextToken());           // N 세론 칸의 수(행)
-        int[][] arr = new int[M][N];                        // 토마토 상자
-        int[][] cos = new int[M][N];                        // 토마토 익는데 소요되는 날짜
+        int M = Integer.parseInt(st.nextToken());           // M 가로 칸의 수(행)
+        int N = Integer.parseInt(st.nextToken());           // N 세로 칸의 수(열)
+        int[][] arr = new int[N][M];                        // 토마토 상자
+        int[][] cos = new int[N][M];                        // 토마토 익는데 소요되는 날짜
         Queue<Pos> queue = new LinkedList<>();              // BFS 처리하는 queue 선언
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
@@ -39,9 +40,10 @@ public class Q7576_001 {
             for (int i = 0; i < 4; i++) {
                 int mx = tmto.m + x[i];
                 int ny = tmto.n + y[i];
-                if (mx >= 0 && ny >= 0 && mx < M && ny < N && arr[mx][ny] == 0) {
+                if (mx >= 0 && ny >= 0 && mx < N && ny < M && arr[mx][ny] == 0) {
                     arr[mx][ny] = 1;
                     cos[mx][ny] = cos[tmto.m][tmto.n] + 1;
+                    queue.add(new Pos(mx, ny));
                 }
             }
         }
