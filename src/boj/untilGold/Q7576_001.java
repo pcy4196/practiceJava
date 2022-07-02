@@ -42,7 +42,7 @@ public class Q7576_001 {
                 int ny = tmto.n + y[i];
                 if (mx >= 0 && ny >= 0 && mx < N && ny < M && arr[mx][ny] == 0) {
                     arr[mx][ny] = 1;
-                    cos[mx][ny] = cos[tmto.m][tmto.n] + 1;
+                    cos[mx][ny] = cos[tmto.m][tmto.n] + 1; // 기준이 되는 토마토 익는 소요시간 +1
                     queue.add(new Pos(mx, ny));
                 }
             }
