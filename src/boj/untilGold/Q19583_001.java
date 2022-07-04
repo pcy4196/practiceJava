@@ -1,12 +1,8 @@
 package boj.untilGold;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Q19583_001 {
 
