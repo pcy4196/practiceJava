@@ -61,7 +61,7 @@ public class Q1946_001 {
         // 면접 성적 오름차순 정렬
         Collections.sort(scores);
 
-        int rank = scores.get(0).s; // 합격, 불합격을 나누는 서류 등수(이전사람)
+        int rank = scores.get(0).s; // 합격, 불합격을 나누는 기준[서류 등수(이전사람)]
 
         for (int i = 1; i < scores.size(); i++) {
             if (rank > scores.get(i).s) {
