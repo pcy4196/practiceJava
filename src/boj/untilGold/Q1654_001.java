@@ -24,11 +24,11 @@ public class Q1654_001 {
         long start = 1;
         // 랜선길이 값 중 최대값 설정
         long end    = Arrays.stream(arr).max().getAsLong();
-        long answer = Integer.MIN_VALUE;
+        long answer = 0L;
         long mid    = 0L;
         while (start <= end) {
             mid = (start + end) / 2;
-            long cnt = getLintCnt(mid, arr);
+            int cnt = (int)getLineCnt(mid, arr);
             // 구한 랜선개수에 따른 처리 구현
             if (cnt >= N) {
                 // 랜선개수가 기준값보다 크면 시작값을 중간값보다 더 큰 값으로 세팅하여 진행
@@ -44,7 +44,7 @@ public class Q1654_001 {
     }
 
     // 기준이 되는 길이로 랜선 개수를 구하는 메서드
-    private static long getLintCnt(long mid, long[] arr) {
+    private static long getLineCnt(long mid, long[] arr) {
         long cnt = 0L;
         for (int i = 0; i < arr.length; i++) {
             cnt += arr[i] / mid;
