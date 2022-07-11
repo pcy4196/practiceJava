@@ -60,4 +60,5 @@
 + 에라토스테네스의 체(SILVER4) - boj.untilGold.Q2960_001
 + 신입사원(SILVER1) - boj.untilGold.Q1946_001
 + 랜선 자르기(SILVER2) - boj.untilGold.Q1654_001
++ LCS(GOLD5) - boj.untilGold.Q9251_001
 ***
