@@ -61,4 +61,5 @@
 + 신입사원(SILVER1) - boj.untilGold.Q1946_001
 + 랜선 자르기(SILVER2) - boj.untilGold.Q1654_001
 + LCS(GOLD5) - boj.untilGold.Q9251_001
++ 퇴사(SILVER3) - boj.untilGold.Q14501_001
 ***
