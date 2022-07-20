@@ -65,4 +65,5 @@
 + IOIOI(SILVER1) - boj.untilGold.Q5525_001
 + 게임(SILVER3) - boj.untilGold.Q1072_001
 + 게임(SILVER3) - boj.untilGold.Q1072_002(수식을 사용해서 처리)
++ 그림(SILVER1) - boj.untilGold.Q1926_001
 ***
