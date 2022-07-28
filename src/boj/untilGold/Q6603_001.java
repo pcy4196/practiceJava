@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Q6603_001 {
@@ -17,6 +18,7 @@ public class Q6603_001 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         Integer[] arr;
+        // 여러 개의 테스트 케이스 담기 위한 리스트 변수 선언
         ArrayList<Integer[]> list = new ArrayList<>();
         while (true) {
             st = new StringTokenizer(br.readLine());
@@ -33,11 +35,27 @@ public class Q6603_001 {
         }
 
         for (int i = 0; i < list.size(); i++) {
-            Integer[] arrVar = list.get(i);
-            for (int j = 0; j < arrVar.length; j++) {
-                System.out.print(arrVar[j] + " ");
+            visited = new int[list.get(i).length];
+            DFS(list.get(i), 0, "");
+        }
+    }
+
+    private static void DFS(Integer[] arr, int L, String ans) {
+        if (L == 6) {
+            String[] ansArr = ans.split(" ");
+            Arrays.sort(ansArr);
+            for (String s : ansArr) {
+                System.out.print(s + " ");
             }
             System.out.println();
+        } else {
+            for (int i = L; i < arr.length; i++) {
+                if (visited[i] == 0) {
+                    visited[i] = 1;
+                    DFS(arr, L+1, ans + arr[i] + " ");
+                    visited[i] = 0;
+                }
+            }
         }
     }
 
