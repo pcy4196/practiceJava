@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Q6603_001 {
@@ -36,23 +35,24 @@ public class Q6603_001 {
 
         for (int i = 0; i < list.size(); i++) {
             visited = new int[list.get(i).length];
-            DFS(list.get(i), 0, "");
+            DFS(list.get(i), 0, 0);
+            System.out.println();
         }
     }
 
-    private static void DFS(Integer[] arr, int L, String ans) {
+    private static void DFS(Integer[] arr, int L, int S) {
         if (L == 6) {
-            String[] ansArr = ans.split(" ");
-            Arrays.sort(ansArr);
-            for (String s : ansArr) {
-                System.out.print(s + " ");
+            for (int i = 0; i < visited.length; i++) {
+                if (visited[i] == 1) {
+                    System.out.print(arr[i] + " ");
+                }
             }
             System.out.println();
         } else {
-            for (int i = L; i < arr.length; i++) {
+            for (int i = S; i < arr.length; i++) {
                 if (visited[i] == 0) {
                     visited[i] = 1;
-                    DFS(arr, L+1, ans + arr[i] + " ");
+                    DFS(arr, L+1, i+1);
                     visited[i] = 0;
                 }
             }
