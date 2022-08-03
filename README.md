@@ -69,4 +69,5 @@
 + 단어 공부(BRONZE1) - boj.untilGold.Q1157_001
 + 로또(SILVER2) - boj.untilGold.Q6603_001
 + 단어 뒤집기(BRONZE1) - boj.untilGold.Q9093_001
++ N번째 큰 수(BRONZE1) - boj.untilGold.Q2693_001
 ***
