@@ -70,4 +70,5 @@
 + 로또(SILVER2) - boj.untilGold.Q6603_001
 + 단어 뒤집기(BRONZE1) - boj.untilGold.Q9093_001
 + N번째 큰 수(BRONZE1) - boj.untilGold.Q2693_001
++ 수들의 합(SILVER5) - boj.untilGold.Q1789_001
 ***
