@@ -77,3 +77,4 @@
 ##### https://cote.inflearn.com/contest/10/problems
 + 01-01(문자찾기) - inflearn.problems.Q01_01_001
 + 02-10(봉우리) - inflearn.problems.Q02_10_001
++ 02-11(임시반장 정하기) - inflearn.problems.Q02_11_001
