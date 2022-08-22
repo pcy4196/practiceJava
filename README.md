@@ -71,6 +71,7 @@
 + 단어 뒤집기(BRONZE1) - boj.untilGold.Q9093_001
 + N번째 큰 수(BRONZE1) - boj.untilGold.Q2693_001
 + 수들의 합(SILVER5) - boj.untilGold.Q1789_001
++ 수열 정렬(SILVER4) - boj.untilGold.Q1015_001
 ***
 
 #### 인프런(inflearn)
