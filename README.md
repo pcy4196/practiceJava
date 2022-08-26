@@ -81,4 +81,5 @@
 + 02-11(임시반장 정하기) - inflearn.problems.Q02_11_001
 + 03-03(최대 매출) - inflearn.problems.Q03_03_001
 + 05-01(올바른 괄호) - inflearn.problems.Q05_01_001
-+ 05-01(공주 구하기) - inflearn.problems.Q05_06_001
++ 05-06(공주 구하기) - inflearn.problems.Q05_06_001
++ 05-08(응급실) - inflearn.problems.Q05_08_001
