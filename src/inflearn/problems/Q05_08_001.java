@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Q05_08_001 {
@@ -49,8 +47,8 @@ public class Q05_08_001 {
 
     // 환자의 정보를 가지는 클래스
     static class Elem {
-        private int num;
-        private int idx;
+        int num;
+        int idx;
 
         public Elem(int num, int idx) {
             this.num = num;
