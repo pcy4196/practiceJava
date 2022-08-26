@@ -3,6 +3,7 @@ package inflearn.problems;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -17,23 +18,30 @@ public class Q05_08_001 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());           // N명의 환자
         int M = Integer.parseInt(st.nextToken());           // M번째 환자
-        Queue<Elem> queue = new LinkedList<>();
+        ArrayList<Elem> list = new ArrayList<>();
         // 환자 정보 queue에 세팅
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            queue.add(new Elem(Integer.parseInt(st.nextToken()), i));
+            list.add(new Elem(Integer.parseInt(st.nextToken()), i));
         }
         int answer = 0;
         while (true) {
-            Elem elem = queue.poll();
-            if (elem.num > queue.peek().num) {
+            Elem elem = list.get(0);
+            int max = 0;
+            // 나머지 환자의 위험도 측정
+            for (int i = 1; i < list.size(); i++) {
+                max = Math.max(max, list.get(i).num);
+            }
+            if (elem.num >= max) {
+                // 위험도가 높을 경우에만 진료
                 answer++;
                 if (elem.idx == M) {
                     break;
                 }
             } else {
-                queue.add(elem);
+                list.add(elem);
             }
+            list.remove(0);
         }
 
         System.out.println(answer);
