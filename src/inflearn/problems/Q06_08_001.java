@@ -23,10 +23,25 @@ public class Q06_08_001 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        // 배열 정렬(오름차순)
         Arrays.sort(arr);
 
-        System.out.println(Arrays.toString(arr));
+        // index 0 부터이기 때문에 return 값에서 +1 출력
+        System.out.println(binarySrch(M, 0, N-1, arr) + 1);
+    }
 
+    // 이분탐색 재귀메서드
+    private static int binarySrch(int M, int start, int end, int[] arr) {
+        int mid = (int) ((start + end) / 2.0);
+        if (arr[mid] == M) {
+            return mid;
+        } else if (arr[mid] > M) {
+            end = mid - 1;
+            return binarySrch(M, start, end, arr);
+        } else {
+            start = mid + 1;
+            return binarySrch(M, start, end, arr);
+        }
     }
 
 }
