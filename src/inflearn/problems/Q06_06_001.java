@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 public class Q06_06_001 {
 
     // 인프런(inflearn) - 장난꾸러기
-    // 문제 URL : hhttps://cote.inflearn.com/contest/10/problem/06-06
+    // 문제 URL : https://cote.inflearn.com/contest/10/problem/06-06
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

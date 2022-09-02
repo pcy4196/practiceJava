@@ -84,3 +84,4 @@
 + 05-06(공주 구하기) - inflearn.problems.Q05_06_001
 + 05-08(응급실) - inflearn.problems.Q05_08_001
 + 06-06(장난꾸러기) - inflearn.problems.Q06_06_001 
++ 06-08(이분검색) - inflearn.problems.Q06_08_001 
