@@ -74,6 +74,7 @@
 + 수열 정렬(SILVER4) - boj.untilGold.Q1015_001
 + 체스판 다시 칠하기(SILVER4) - boj.untilGold.Q1018_001
 + 동전 1(GOLD5) - boj.untilGold.Q2293_001
++ 인구 이동(GOLD5) - boj.untilGold.Q16234_001
 ***
 
 #### 인프런(inflearn)
