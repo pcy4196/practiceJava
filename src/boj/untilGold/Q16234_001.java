@@ -45,9 +45,6 @@ public class Q16234_001 {
             }
         }
 
-//        for (int[] con : con) {
-//            System.out.println(Arrays.toString(con));
-//        }
         // 문제 구현 생각
         // 1. 연합국가 탐색(BFS)
         // 1-1. 탐색 시 연합국가별 인구합계 및 인구이동할 국가 체크(ArraysList 사용)
