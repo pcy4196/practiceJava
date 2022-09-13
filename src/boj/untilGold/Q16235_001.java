@@ -16,7 +16,7 @@ public class Q16235_001 {
     static int[][] floor;           // 양분이 포함된 땅
     static int[] dx = {-1, 0, 1, 0, 1, 1, -1, -1};  // 8방향 이동
     static int[] dy = {0, -1, 0, 1, 1, -1, 1, -1};
-    static Deque<Elem> trees;   // 살아있는 나무
+    static Queue<Elem> trees;   // 살아있는 나무
     static Queue<Elem> deadTrees;       // 죽은 나무
 
     static class Elem {
@@ -71,13 +71,6 @@ public class Q16235_001 {
             trees.add(new Elem(r, c, y));
         }
 
-//        // 입력값 출력
-//        for (int[] yangBun : yangBuns) {
-//            System.out.println(Arrays.toString(yangBun));
-//        }
-//        for (Elem tree : trees) {
-//            System.out.println(tree);
-//        }
         // 정답 출력
         System.out.println(solve());
     }
@@ -121,9 +114,10 @@ public class Q16235_001 {
                 }
                 trees.add(tree);
             }
-            for (Elem tmpTree : tmpTrees) {
-                trees.addFirst(tmpTree);
-            }
+
+            tmpTrees.addAll(trees);
+            // trees 큐로 원복
+            trees = tmpTrees;
 
             // 4. 겨울 : 양분공급
             for (int j = 0; j < N; j++) {
