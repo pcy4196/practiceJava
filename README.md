@@ -83,6 +83,7 @@
 #### 인프런(inflearn)
 ##### https://cote.inflearn.com/contest/10/problems
 + 01-01(문자찾기) - inflearn.problems.Q01_01_001
++ 01-10(가장 짧은 문자거리) - inflearn.problems.Q01_10_001
 + 02-10(봉우리) - inflearn.problems.Q02_10_001
 + 02-11(임시반장 정하기) - inflearn.problems.Q02_11_001
 + 03-03(최대 매출) - inflearn.problems.Q03_03_001
